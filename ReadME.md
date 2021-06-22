@@ -1,12 +1,12 @@
-## Three js Perlin Noise Terrain Viewer
+# Procedural Terrain Generator 
 
-* this program demonstrates a random perlin noise generator with WebGL (three.js) and c++.
+* this program demonstrates procedrual terrain with a randomly created height map, the graphics pipeline is WebGL (three.js) and c++.
 
 ## How it works: 
-*First, a 3D graphics context is created with the WebGL framework three.js, then a flat plane is created to be textured over to demonstarte the perlin noise generator. Once the blank mesh plane is created a randomly perlin noise height map created with a c++ algorhtim will add heigh to the plane mesh.
+* First, a 3D graphics context is created with the WebGL framework three.js, then a flat plane is created to be textured over to demonstarte the perlin noise generator. Once the blank mesh plane is created a randomly perlin noise height map created with a c++ algorhtim will add heigh to the plane mesh.
 
 # running the program:
-*first ensure you have node.js and the node package manager installed on your computer,
+* first ensure you have node.js and the node package manager installed on your computer,
 * To run the code, download the repo, cd into the the file directory and run "npm install" to install the web dependencies then run "npm run dev" to load the program into a local host web server. You can zoom in and out of the file 
 
 # Changing height map and color texture
