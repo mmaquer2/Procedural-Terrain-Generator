@@ -14,15 +14,19 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 //create mesh geometry
-const geometry = new THREE.PlaneBufferGeometry(3,3,64,64);
+const geometry = new THREE.PlaneBufferGeometry(64,64,64,64);
+
+
+//add our sun 
 
 //create our mesh Texture Loaders
 const loader = new THREE.TextureLoader();
 
 //load our height map her
-const heightMap = loader.load('/randomMapTwo.png')
+const heightMap = loader.load('/random_map_three.jpg')
 //load our color map here
-const textureImgage = loader.load("/mtn.jpeg")
+//const textureImgage = loader.load("/mtn.jpeg")
+const textureImgage = loader.load("./land_map_example.png")
 
 
 // Materials
@@ -37,8 +41,20 @@ const material = new THREE.MeshStandardMaterial({
 })
 
 
-// Mesh
+// declaring our mesh plane
 const plane = new THREE.Mesh(geometry,material)
+
+//declaring our sphere mesh for our sun
+
+const sphereGeometry = new THREE.SphereGeometry( 5, 32, 32 );
+const sphereMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial  );
+sphere.position.set(20,20,20);
+
+scene.add( sphere );
+
+
+
 scene.add(plane)
 
 plane.rotation.x = 181
@@ -138,9 +154,6 @@ const tick = () =>
 
 tick()
 
-// movement - please calibrate these values
-var xSpeed = 0.0001;
-var ySpeed = 0.0001;
 
 
 
